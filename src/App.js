@@ -39,15 +39,16 @@ class App extends Component {
     }
 
     render() {
+        // If I was a frontend developer, I'd probably be rather concerned with the window.location.pathname non-sense below
         return (
             <Switch {...this.props}>
-                {this.state.connector === '' && window.location.pathname !== '/login' && <Redirect to='/login'/>}
+                {this.state.connector === '' && window.location.pathname !== process.env.REACT_APP_PUBLIC_URL + '/login' && <Redirect to='/login'/>}
                 <Route
                     exact
                     path='/login'
                     render={() => <LoginHandler updateConnector={this.updateConnector}{...this.props}/>}
                 />
-                {this.state.selectedRepository === '' && window.location.pathname !== '/select-repository' && <Redirect to='/select-repository'/>}
+                {this.state.selectedRepository === '' && window.location.pathname !== process.env.REACT_APP_PUBLIC_URL + '/select-repository' && <Redirect to='/select-repository'/>}
                 <Route
                     exact
                     path='/select-repository'
