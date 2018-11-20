@@ -1,0 +1,1 @@
+This is an example implementation for the DynamoGeek [GitGraph](https://www.npmjs.com/package/@dynamogeek/git-graph) React component.
